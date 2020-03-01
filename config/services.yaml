@@ -25,3 +25,14 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+    punk_api_http_api:
+        class: App\Interfaces\Impl\PunkapiHTTPApi
+
+    get_basic_service:
+        class: App\Services\BasicService
+        public: true
+        arguments:
+          ['@punk_api_http_api']
+
+    App\Controller\GetDetailController:
+        arguments: ['@get_basic_service']

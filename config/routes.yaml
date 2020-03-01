@@ -1,3 +1,11 @@
 #index:
 #    path: /
 #    controller: App\Controller\DefaultController::index
+get_basic:
+    path: /getBasic/{food}
+    controller: App\Controller\GetBasicController
+    methods: GET
+get_detail:
+    path: /getDetail/{food}
+    controller: App\Controller\GetDetailController
+    methods: GET
